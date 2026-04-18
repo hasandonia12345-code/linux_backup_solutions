@@ -22,3 +22,15 @@ service amanda {
     server      = /usr/lib64/amanda/amandad
     server_args = -auth=bsdtcp amdump amindexd amidxtaped
 }
+
+.
+├── configs/
+│   ├── amanda.conf            # The "overridden" options you mentioned
+│   ├── disklist               # Sample DLE (Disk List Entries)
+│   └── xinetd_amandaclient    # Your xinetd service configuration
+├── scripts/
+│   ├── setup_ssh_auth.sh      # Script to automate the ssh-keygen/copy-id process
+│   └── amanda_cron_job.sh     # Example of the amdump/amreport crontab
+├── docs/
+│   └── troubleshooting.md     # Your notes on SCSI errors and LTO tape sizes
+└── README.md                  # The main portfolio page
