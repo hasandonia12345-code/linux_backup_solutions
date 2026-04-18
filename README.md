@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# DevOps
-=======
 # Enterprise Data Protection: AMANDA & LTO-6 Tape Systems
 
 ## 📌 Project Overview
@@ -25,4 +22,3 @@ service amanda {
     server      = /usr/lib64/amanda/amandad
     server_args = -auth=bsdtcp amdump amindexd amidxtaped
 }
->>>>>>> 9423ef9 (Initial commit: AMANDA backup infrastructure project)
