@@ -12,7 +12,7 @@ To enable passwordless backups, the `amandabackup` user is unlocked and keys are
 2. `su - amandabackup -c "ssh-keygen"`
 3. `ssh-copy-id amandabackup@[Client_IP]`
 
-### Client xinetd Config
+### Client xinetd Config #communt 
 ```text
 service amanda {
     socket_type = stream
