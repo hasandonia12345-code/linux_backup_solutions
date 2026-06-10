@@ -6,4 +6,4 @@ mkdir /restore/db_archive && cd /restore/db_archive
 amrestore -b 1000000 /dev/nst0 DB2-bond0 /archive/EXP
 
 # 3. Extract final archive
-tar -xvf <restored_dump_file>
+tar -xvf <restored_dump_file>4.test for commit
