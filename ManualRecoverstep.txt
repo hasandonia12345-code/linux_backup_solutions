@@ -1,0 +1,9 @@
+# 1. Prepare Recovery Directory
+mkdir /restore/db_archive && cd /restore/db_archive
+
+# 2. Extract from Tape (using optimized block size)
+# Example: amrestore -b [BLOCKSIZE] [DEVICE] [HOSTNAME] [DISKNAME]
+amrestore -b 1000000 /dev/nst0 DB2-bond0 /archive/EXP
+
+# 3. Extract final archive
+tar -xvf <restored_dump_file>4.test for commit
