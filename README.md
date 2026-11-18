@@ -207,27 +207,6 @@ mtx -f /dev/sgX status
 
 Replace device placeholders with the verified local device paths. Tape erase, relabel, and overwrite operations are destructive; verify the cartridge and retention policy before executing them.
 
-## Public Repository Security
-
-Before committing or pushing changes:
-
-- Replace real hostnames and internal DNS suffixes with documentation names such as `client-a.example.invalid`.
-- Replace real IPs with documentation ranges such as `192.0.2.0/24`, `198.51.100.0/24`, or `203.0.113.0/24`.
-- Replace production filesystem paths, usernames, tape labels, barcodes, serial numbers, and device mappings with clear placeholders.
-- Never commit SSH private keys, passwords, API tokens, `.env` files, or unredacted logs.
-- Keep production `amanda.conf`, `disklist`, and `authorized_keys` files out of the public repository; publish sanitized `.example` templates instead.
-- Review both the staged changes and the full Git history if sensitive data was ever committed. Removing a secret from the latest file does not remove it from prior commits; rotate exposed credentials immediately.
-
-Suggested checks before a commit:
-
-```bash
-git status
-git diff --check
-git diff --cached --check
-```
-
-A text search can help locate obvious sensitive strings, but it is not a substitute for a dedicated secret scanner.
-
 ## Scope and Disclaimer
 
 This repository is an operational learning and documentation project, not a vendor-supported deployment package. Commands, configuration syntax, executable paths, authentication behavior, and tape/changer integration can differ by Amanda release, Linux distribution, and hardware. Validate examples in a test environment and consult the man pages installed with the target Amanda version before applying changes to production.
